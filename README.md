@@ -14,15 +14,25 @@ For data normalization, we divided the pixel values by 255, so all the pixel val
 On the augmentation side, we tried several image transformation: flipping vertically and horizontally, shifting, zooming and rotating by 45 degrees. 
 Finally created a training and validation data.
 
-![alt text](https://github.com/AbhinavSingh6295/Deep_Learning-Project/blob/main/6496.jpg)
-![alt text](https://github.com/AbhinavSingh6295/Deep_Learning-Project/blob/main/6496.png)
+<img src="https://github.com/AbhinavSingh6295/Deep_Learning-Project/blob/main/6496.jpg" alt="Sample Test Image" width="200" height="200" />
 
+*Sample Train Image*
+
+<img src="https://github.com/AbhinavSingh6295/Deep_Learning-Project/blob/main/6496.png" width="200" height="200" />
+
+*Sample Mask Image*
 
 - **U-Net Model Architecture**: U-Net is a Fully Convolution Network, while preserving the spatial information, replaces the dense layers in a typical CNN with a transposed convolution layer that upsamples the feature map back to the size of the original input image.
 It also adds skip connection to retain information that would other lost during encoding. We added the Batch Normalization in every conv2d block, 
 which help in achieving very good score with basic U-Net implementation.
 
 - **Traing the U-Net**: For optimizers, we used Adam and SGD. We tried several learning rate. Used cross-entropy as loss function. Trained model for batch size and extended epochs.
+
+<img src="https://github.com/AbhinavSingh6295/Deep_Learning-Project/blob/main/Training%20Loss%20Curve.PNG" alt="Sample Test Image" width="400" height="200" />
+
+*Training Loss Curve*
+
+
 
 - **Output on Test Images**: To get the predictions, we basically used the trained model in the last epoch to make the predictions for the test data. 
 The predictions would contain the probability for each class for every pixel. Finally, we extract the class with highest probability and assign it to respective pixel, 
