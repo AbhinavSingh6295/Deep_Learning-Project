@@ -1,4 +1,4 @@
-# Deep_Learning-Project
+# Deep Learning Project
 
 ## Multi-image Segmentation using U-Net Architecture in Pytorch Framework
 
